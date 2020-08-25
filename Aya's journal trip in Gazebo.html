@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <base >
+    <title>肆弌七の迷之网站-射命丸文的酉间坊纪行</title>
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<h1>射命丸文的酉间坊纪行</h1>
+<br></br>
+<b>然而这页并未做完</b>
+<a href="https://www.bilibili.com/video/BV1th411Z7e6">宣传PV</a>
+<script type="text/javascript">
+//这是js代码
+function randomWord (randomFlag, min, max) {
+    let str1 = "",
+        range = min,
+        arr = ['"moe-cdn.fly3949.com/assets/img/pic0.jpg"', '"moe-cdn.fly3949.com/assets/img/pic1.jpg"', '"moe-cdn.fly3949.com/assets/img/pic2.jpg"', '"moe-cdn.fly3949.com/assets/img/pic3.jpg"'];
+    if (randomFlag) {
+        range = Math.round(Math.random() * (max - min)) + min;// 任意长度
+    }
+    for (let i = 0; i < range; i++) {
+        pos = Math.round(Math.random() * (arr.length - 1));
+        str1 += arr[pos];
+    }
+    str2=str1;
+    return pos+1;
+};
+// 多余地方请自动忽略，测试用的，懒得删除，参考的需要的部分即可
+console.log('test:',randomWord(true,1,1));
+</script>
+<h1>文文图</h1>
+<div id="imgss">
+
+</div>
+<script>
+    var imgobj=document.getElementById('imgss');
+    console.log('imgobj:',imgobj);
+    //imgobj.innerHTML='<img width="50%"" height="50%" src='+str2+'/>';
+    imgobj.innerHTML='<style>body {background-image: url('+str2+');    background-repeat:inherit|no-repeat|repeat|repeat-x|repeat-ybackground-repeat: no-repeat;background-position: center;background-attachment: fixed;} </style>/>';
+</script>
