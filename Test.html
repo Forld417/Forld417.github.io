@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>ReadImageDemo</title>  
+    <style>  
+        #buttonContainer {  
+            margin-top: 10px;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <input type="file" id="selectFiles" onchange="dealSelectFiles()" multiple webkitdirectory>  
+    <canvas id="myCanvas" width="1440" height="900"></canvas>  
+    <div id="buttonContainer">  
+        <button onclick="switchImage()">切换图片</button>  
+    </div>  
+  
+    <script type="text/javascript">  
+        var images = []; // 存储所有图片对象的数组  
+        var currentImageIndex = 0; // 当前显示的图片索引  
+        var imgPosX = 0;  
+        var imgWidth = 256;  
+  
+        function dealSelectFiles() {  
+            var selectFiles = document.getElementById("selectFiles").files;  
+  
+            for (var i = 0; i < selectFiles.length; i++) {  
+                var file = selectFiles[i];  
+                var reader = new FileReader();  
+                reader.readAsDataURL(file);  
+                reader.onloadend = function (e) {  
+                    var img = new Image();  
+                    img.src = e.target.result;  
+                    img.onload = function () {  
+                        images.push(img); // 存储图片对象到数组中  
+                        if (images.length === 1) {  
+                            drawCurrentImage(); // 如果是第一张图片，则直接绘制  
+                        }  
+                    };  
+                };  
+            }  
+        }  
+  
+        function drawCurrentImage() {  
+            var myCanvas = document.getElementById("myCanvas");  
+            var cxt = myCanvas.getContext('2d');  
+            cxt.clearRect(0, 0, myCanvas.width, myCanvas.height); // 清除画布  
+            if (images.length > 0) {  
+                var img = images[currentImageIndex];  
+                cxt.drawImage(img, imgPosX, 0);  
+            }  
+        }  
+  
+        function switchImage() {  
+            currentImageIndex = (currentImageIndex + 1) % images.length; // 计算下一张图片的索引  
+            drawCurrentImage(); // 绘制当前索引的图片  
+        }  
+    </script>  
+</body>  
+</html>
