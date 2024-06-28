@@ -252,21 +252,44 @@ a {
 }
 
 /* Main */
-
 body {
+    position: relative;
     font-family: "Lucida Grande", "Lucida Sans Unicode", Lucida, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
     -webkit-font-smoothing: antialiased;
-    height: 120%;
-    background-image: url("../img/A-shiki.jpg");
-    background-repeat:inherit|no-repeat|repeat|repeat-x|repeat-y
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+}
+
+body::before {  
+    content: "";  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    background-image: url("../img/A-shiki.jpg");  
+    background-repeat:inherit|no-repeat|repeat|repeat-x|repeat-y;
+    background-size: cover;  
+    background-position: center;  
+    /* 初始模糊值 */  
+    filter: blur(0px);  
+    z-index: -1; /* 确保伪元素在内容之下 */  
+      
+    /* 添加动画 */  
+    animation: blurAnimation 3s ease-in-out forwards;  
+}
+
+@keyframes blurAnimation {  
+    0% {  
+        filter: blur(0px);  
+    }  
+    100% {  
+        filter: blur(10px); /* 结束时的模糊值 */  
+    }  
 }
 
 main .content {
@@ -413,6 +436,115 @@ footer {
 
 #contact .items a:hover {
     animation: shake 5s infinite ease-in-out;
+}
+
+#article .items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#article h1 {
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+#article .items a {
+    color: rgba(0, 0, 0, 0.8);
+    ;
+    width: 33.333%;
+    padding: .5em 0;
+    border-radius: 1em;
+    display: inline-block;
+    transition: transform .3s;
+}
+
+#article .items a i {
+    display: block;
+    font-size: 3em;
+    margin-top: 1em;
+}
+
+#article .items a span {
+    display: block;
+    margin-top: 1em;
+}
+
+#article .items a:hover {
+    animation: shake 5s infinite ease-in-out;
+}
+
+#article .items .gamelist {
+    display: none;  
+}
+
+#article .items .gamelist .items{
+    display: block;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+#article .items .gamelist .items .blog{
+    display: inline-block;
+}
+
+#article .items .gamelist .back{
+    transition: none !important;  
+    animation: none !important;
+    overflow: visible;
+    position: relative;
+    top:100px;
+    left:-260px;
+    /* 设置背景颜色 */  
+    background-color: #f0f0f0;  
+      
+    /* 设置内边距，使文字与边框有一些空间 */  
+    padding: 10px;  
+      
+    /* 设置边框，可选 */  
+    border: 1px solid #ccc;  
+      
+    /* 设置外边距，可选，用于与其他元素之间的间距 */  
+    margin: 10px 0;  
+      
+    /* 其他样式，如字体、颜色等 */  
+    font-size: 16px;  
+    color: #333;
+    width: auto;
+}
+
+#article .items .gamelist .items .image-container{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+#article .items .gamelist .items .blog .link{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 150px;
+}
+
+#article .items .gamelist .items .blog .link .image-container img{
+    width: 100%;
+    height: 100%;
+    position: absolute;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+#article .items .gamelist.active {
+    display: block;  
 }
 
 #donate h1 {

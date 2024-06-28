@@ -81,3 +81,27 @@ Date.prototype.Format = function (fmt) { //author: meizz
         if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
 }
+
+document.addEventListener('DOMContentLoaded', function() {  
+    var gameLink = document.querySelector('.game-link');  
+    //var gameIcon = document.querySelector('.game-icon');  
+    var newContentContainer = document.querySelector('.gamelist');  
+  
+    gameLink.addEventListener('click', function(event) {  
+        event.preventDefault();
+        gameLink.style.display = 'none'; 
+        newContentContainer.style.display = 'block';  
+    });  
+});
+
+document.addEventListener('DOMContentLoaded', function() {  
+    var gameLink = document.querySelector('.back');  
+    var gamelist = document.querySelector('.gamelist');
+    var gameMenu = document.querySelector('.game-link');
+  
+    gameLink.addEventListener('click', function(event) {  
+        event.preventDefault();
+        gamelist.style.display = 'none'
+        gameMenu.style.display = 'block'  
+    });  
+});

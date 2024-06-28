@@ -13,6 +13,7 @@
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
 </head>
 
 <body>
@@ -26,21 +27,22 @@
             <div class="rect5"></div>
         </div>
     </div>
+    <div class="blur-background">
+    </div>
     <!-- Main box -->
     <main>
         <div class="content">
             <div class="left">
                 <div class="avatar">
-                    <img src="moe-cdn.fly3949.com/assets/img/Forld417Logo.png">
+                    <img src="moe-cdn.fly3949.com/assets/img/Forld417Logo.png" alt="LOGO">
                 </div>
                 <ul class="menu">
                     <li>
                         <a goto="#home">HOME</a>
                     </li>
-                    <!---<li>
-                        <a goto="#archives">ARCHIVES</a>
+                    <li>
+                        <a goto="#article">BLOGS</a>
                     </li>
-                    --->
                     <li>
                         <a goto="#contact">CONTACT</a>
                     </li>
@@ -61,14 +63,7 @@
                     <h1>肆弌七417</h1>
                     <p>
                         此为个人测试网站，用于个人的记录和分享
-                        <br> 历史文章
-                        <br>
-                        <a href="Aya's journal trip in Gazebo.html">
-                            射命丸文的酉间坊纪行
-                        </a>
                     </p>
-                    <!--Play Music
-                        <embed src="//music.163.com/style/swf/widget.swf?sid=2075197&type=1&auto=1&width=310&height=430" width="330" height="450"  allowNetworking="all"></embed>-->
                 </section>
                 <!---<section id="archives">
                     <h1>近期文章</h1>
@@ -84,6 +79,38 @@
                             <i class="fa fa-envelope"></i>
                             <span>Bilibili</span>
                         </a>
+                    </div>
+                </section>
+                <section id="article">
+                    <h1>博客</h1>
+                    <div class="items">
+                        <a href="#" class="game-link">
+                            <i class="fa fa-gamepad"></i>
+                            <span>Game</span>
+                        </a>
+                        <div class="gamelist">
+                            <div class="items">
+                                <div class="blog">
+                                    <a class="link" href="https://tuyoki.itch.io/dwellers-empty-path" target="_blank">
+                                        <div class="image-container">
+                                            <img src="https://img.itch.zone/aW1hZ2UvNTk0OTQ4LzM4MTg3MzkucG5n/original/%2Bhg8dp.png" alt="Dwellers empty path">
+                                        </div>
+                                        <ruby>空径之民<rt>Dwellers empty path</rt></ruby>
+                                    </a>
+                                </div>
+                                <div class="blog">
+                                    <a class="link" href="https://store.steampowered.com/app/976940" target="_blank">
+                                        <div class="image-container">
+                                            <img src="https://shared.st.dl.eccdnx.com/store_item_assets/steam/apps/976940/header_schinese.jpg" alt="The Shell of Permafrost">
+                                        </div>
+                                        <ruby>永冻之壳<rt>The Shell of Permafrost</rt></ruby>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="#" class="back">
+                                返回
+                            </a>
+                        </div>
                     </div>
                 </section>
                 <section id="donate">
@@ -108,5 +135,7 @@
     <!-- Some scripts -->
     <script src="cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="moe-cdn.fly3949.com/assets/js/main.js"></script>
+     <!--Play Music-->
+    <iframe style="position: fixed;bottom: 10px;left: 5px;opacity: 0.7;z-index: 999;" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1462341831&auto=1&height=66"></iframe>
 </body>
 </html>
